@@ -1,6 +1,6 @@
 package com.tagakov.common
 
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 
 abstract class BaseFragment : Fragment() {
     protected val bind = createBinder()

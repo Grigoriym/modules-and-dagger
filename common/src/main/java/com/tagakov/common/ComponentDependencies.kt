@@ -2,7 +2,7 @@
 
 package com.tagakov.common
 
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import dagger.MapKey
 import dagger.Module
 import dagger.multibindings.Multibinds

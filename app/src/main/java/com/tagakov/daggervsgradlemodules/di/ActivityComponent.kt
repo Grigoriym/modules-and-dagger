@@ -1,6 +1,6 @@
 package com.tagakov.daggervsgradlemodules.di
 
-import android.support.v4.app.FragmentManager
+import androidx.fragment.app.FragmentManager
 import com.tagakov.common.ComponentDependencies
 import com.tagakov.common.ComponentDependenciesKey
 import com.tagakov.common.di.Rx

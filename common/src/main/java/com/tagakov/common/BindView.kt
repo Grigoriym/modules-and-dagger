@@ -4,13 +4,13 @@ import android.app.Activity
 import android.app.Dialog
 import android.app.DialogFragment
 import android.app.Fragment
-import android.support.annotation.IdRes
+import androidx.annotation.IdRes
 import android.view.View
 import android.view.ViewStub
 import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty
-import android.support.v4.app.DialogFragment as SupportDialogFragment
-import android.support.v4.app.Fragment as SupportFragment
+import androidx.fragment.app.DialogFragment as SupportDialogFragment
+import androidx.fragment.app.Fragment as SupportFragment
 
 fun <V: View> Activity.bindView(id: Int): ReadOnlyProperty<Activity, V> = required(id, viewFinder, null)
 fun <V: View> Dialog.bindView(id: Int): ReadOnlyProperty<Dialog, V> = required(id, viewFinder, null)
@@ -29,8 +29,8 @@ fun <V: View> View.bindOptionalViews(ids: IntArray, viewInitializer: ViewInitial
 
 fun Fragment.createBinder() = ViewBinder(viewFinder)
 fun DialogFragment.createBinder() = ViewBinder(viewFinder)
-fun SupportFragment.createBinder() = ViewBinder(viewFinder)
-fun SupportDialogFragment.createBinder() = ViewBinder(viewFinder)
+fun androidx.fragment.app.Fragment.createBinder() = ViewBinder(viewFinder)
+fun androidx.fragment.app.DialogFragment.createBinder() = ViewBinder(viewFinder)
 
 class ViewBinder(private val viewFinder: Finder) {
     private val lazyRegistry = mutableListOf<Lazy<*>>()
@@ -65,11 +65,11 @@ private inline val Dialog.viewFinder: Finder get() = { findViewById(it) }
 
 private val DialogFragment.viewFinder: Finder
     get() = { if (dialog == null && view == null) tooEarlyViewAccess(this) else dialog?.findViewById(it) ?: view?.findViewById(it) }
-private val SupportDialogFragment.viewFinder: Finder
+private val androidx.fragment.app.DialogFragment.viewFinder: Finder
     get() = { if (dialog == null && view == null) tooEarlyViewAccess(this) else dialog?.findViewById(it) ?: view?.findViewById(it) }
 private val Fragment.viewFinder: Finder
     get() = { (view ?: tooEarlyViewAccess(this)).findViewById(it) }
-private val SupportFragment.viewFinder: Finder
+private val androidx.fragment.app.Fragment.viewFinder: Finder
     get() = { (view ?: tooEarlyViewAccess(this)).findViewById(it) }
 
 @Suppress("UNCHECKED_CAST")

@@ -1,7 +1,7 @@
 package com.tagakov.daggervsgradlemodules
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.tagakov.common.ComponentDependenciesProvider
 import com.tagakov.common.HasComponentDependencies
 import com.tagakov.daggervsgradlemodules.di.DaggerMainComponent

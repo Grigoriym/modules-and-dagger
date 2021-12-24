@@ -1,7 +1,7 @@
 package com.tagakov.timeview.sample
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.tagakov.common.bindView
 import com.tagakov.timelogic.TimelogicComponent
 import com.tagakov.timelogic.builder

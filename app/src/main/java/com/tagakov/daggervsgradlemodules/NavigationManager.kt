@@ -1,6 +1,6 @@
 package com.tagakov.daggervsgradlemodules
 
-import android.support.v4.app.FragmentManager
+import androidx.fragment.app.FragmentManager
 import com.tagakov.daggervsgradlemodules.di.MainActivityScope
 import com.tagakov.startscreen.api.StartScreenNavigator
 import com.tagakov.userscreen.UserScreenFragment
